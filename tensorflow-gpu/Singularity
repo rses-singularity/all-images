@@ -15,8 +15,8 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 	PATH="/usr/local/anaconda3-4.2.0/bin:$PATH"
 
 	#Add MKL preload
-	LD_PRELOAD=/usr/local/anaconda3-4.2.0/lib/libmkl_core.so:/usr/local/anaconda3-4.2.0/lib/libmkl_sequential.so
-
+	LD_PRELOAD=/usr/local/anaconda3-4.2.0/lib/libmkl_core.so:/usr/local/anaconda3-4.2.0/lib/libmkl_sequential.so:/usr/local/anaconda3-4.2.0/lib/libmkl_avx2.so:/usr/local/anaconda3-4.2.0/lib/libmkl_def.so
+	
 	export PATH LD_LIBRARY_PATH CPATH CUDA_HOME LD_PRELOAD
 
 
@@ -58,6 +58,8 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 	#Install Keras
 	pip install  keras
+
+	conda update -y scikit-learn
 
 
 %runscript

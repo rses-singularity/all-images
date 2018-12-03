@@ -79,14 +79,14 @@ if $make_sandbox || $convert_sandbox_to_image; then
     if [ ! -d $img_name.sbx ]; then
       echo "Sandbox named $img_name.sbx does not exist"
     else
-      echo "Converting sandbox $img_name.sbx to image $img_name.sif"
-      sudo singularity build "$img_name.sif" "$img_name.sbx"
+      echo "Converting sandbox $img_name.sbx to image $img_name.simg"
+      sudo singularity build "$img_name.simg" "$img_name.sbx"
     fi
 
 
   fi
 else
   #Build normally
-  echo "Building image $img_name.sif from $src_dir/Singularity"
-  sudo singularity build $img_name.sif $src_dir/Singularity
+  echo "Building image $img_name.simg from $src_dir/Singularity"
+  sudo singularity build $img_name.simg $src_dir/Singularity
 fi
